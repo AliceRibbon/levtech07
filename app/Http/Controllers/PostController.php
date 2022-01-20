@@ -13,9 +13,9 @@ class PostController extends Controller
  * @param Post Postモデル
  * @return array Postモデルリスト
  */
-public function index(Post $post)
+    public function index(Post $post)
     {
-      return $post->get();
+      return view('posts/index')->with(['posts' => $post -> getByLimit()]);
     }
-
 }
+?>
